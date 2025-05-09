@@ -8,7 +8,10 @@ export default defineNuxtConfig({
 
     cloudflare: {
       deployConfig: true,
-      nodeCompat: true
+      nodeCompat: true,
+      wrangler: {
+        name: 'nuxt-plugin-visit-counter-issue'
+      }
     }
   },
 
