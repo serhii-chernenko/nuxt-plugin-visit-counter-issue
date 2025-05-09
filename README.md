@@ -1,75 +1,19 @@
-# Nuxt Minimal Starter
+# Nuxt Server Plugin Issues
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Production mode
 
-## Setup
+Visiting the home page:
+https://serhii-chernenko-nuxt-plugin-visit-counter-issue.nuxt-test.workers.dev
 
-Make sure to install dependencies:
+Or API endpoint:
+https://serhii-chernenko-nuxt-plugin-visit-counter-issue.nuxt-test.workers.dev/api/visit
 
-```bash
-# npm
-npm install
+Make the counter increased only once due to `server: false` for `useFetch` and `ssr: false` in `nuxt.config.ts`.
 
-# pnpm
-pnpm install
+## Dev mode
 
-# yarn
-yarn install
+But in the dev mode in increased twice on the home page for unknown reason:
+http://localhost:3000/
 
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+While for API it works correctly by increasing only by 1:
+http://localhost:3000/api/visit
